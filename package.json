@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development nodemon src/server.js",
-    "start": "cross-env NODE_ENV=production node src/server.js"
+    "start": "cross-env NODE_ENV=production node src/server.js",
+    "dev:db:migrate": "cross-env NODE_ENV=development npx sequelize-cli db:migrate",
+    "dev:db:migrate:undo": "cross-env NODE_ENV=development npx sequelize-cli db:migrate:undo",
+    "dev:db:migrate:undo:all": "cross-env NODE_ENV=development npx sequelize-cli db:migrate:undo:all",
+    "prod:db:migrate": "cross-env NODE_ENV=production npx sequelize-cli db:migrate",
+    "prod:db:migrate:undo": "cross-env NODE_ENV=production npx sequelize-cli db:migrate:undo"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +22,7 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
+    "mysql2": "^3.14.1",
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
